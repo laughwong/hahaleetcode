@@ -32,17 +32,20 @@ class Solution:
 		ret = []
 		tmp_node = 0
 		ret_list = False
-		while(nums):
-			tmp = nums % 10
-			nums = nums / 10
-			ret.append(tmp)
+		if(nums == 0):
+			return ListNode(nums)
+		else:
+			while(nums):
+				tmp = nums % 10
+				nums = nums / 10
+				ret.append(tmp)
 
-		while(ret):
-			tmp_node = ret.pop()
-			if(ret_list == False):
-				ret_list = ListNode(tmp_node)
-			else:
-				ret_list = self.insertList(ret_list,tmp_node)
+			while(ret):
+				tmp_node = ret.pop()
+				if(ret_list == False):
+					ret_list = ListNode(tmp_node)
+				else:
+					ret_list = self.insertList(ret_list,tmp_node)
 
 		return ret_list
 
@@ -59,13 +62,11 @@ class Solution:
 
 s = Solution()
 
-a = ListNode(3)
-a = s.insertList(a,4)
-a = s.insertList(a,2)
+a = ListNode(0)
 
-b = ListNode(4)
-b = s.insertList(b,6)
-b = s.insertList(b,5)
+
+b = ListNode(0)
+
 
 result = s.addTwoNumbers(a,b)
 
