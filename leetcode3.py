@@ -3,11 +3,9 @@ class Solution(object):
 		i = 0
 		j = 0
 		strlen = len(s)
-		left = []
 		right = []
 		str = []
 		ret = []
-		tmp = []
 		flag = 0
 
 		for x in range(0,strlen):
@@ -20,21 +18,14 @@ class Solution(object):
 				flag = 0
 				for k in range(0,j):
 					if(str[k] == s[x]):
-						left.append(str[k])
 						flag = 1
 					else:
 						if flag == 0:
-							left.append(str[k])
+							pass
 						else:
 							right.append(str[k])
 
 				right.append(s[x])
-				if len(left)>len(right):
-					tmp = left
-				else:
-					tmp = right
-				if len(tmp)>len(ret):
-					ret = tmp
 				str = []
 				str = right
 			else:
@@ -47,5 +38,5 @@ class Solution(object):
 
 
 s = Solution()
-print s.lengthOfLongestSubstring("abcabcbb")
+print s.lengthOfLongestSubstring("dvdf")
 # abcabcbb  bbb  pwwkew jbpnbwwd
